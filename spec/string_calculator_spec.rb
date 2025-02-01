@@ -43,4 +43,8 @@ describe StringCalculator do
   it "should support multiple delimiters" do
     expect(string_calaulator.add("//[*][%]\n1*2%3")).to eq(6)
   end
+
+  it "should support multiple delimiters" do
+    expect(string_calaulator.add("//[***][%%%%]\n\n\n1***2%%%3")).to eq(6)
+  end
 end
