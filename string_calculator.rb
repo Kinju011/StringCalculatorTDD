@@ -2,8 +2,7 @@ class StringCalculator
   def add(numbers)
     return 0 if numbers.empty?
 
-    delimiter = extract_delimiters_and_numbers(numbers).first
-    numbers = extract_delimiters_and_numbers(numbers).last
+    delimiter, numbers = extract_delimiters_and_numbers(numbers)
 
     negative_check = numbers.gsub("\n", delimiter.first).split(Regexp.union(delimiter)).map(&:to_i)
 
