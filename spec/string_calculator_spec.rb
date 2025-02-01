@@ -13,4 +13,8 @@ describe StringCalculator do
   it "returns the sum of two numbers separated by a comma" do
     expect(StringCalculator.new.add("1,2")).to eq(3)
   end
+
+  it "returns the sum of two numbers separated by a comma" do
+    expect(StringCalculator.new.add("1\n2,3")).to eq(5)
+  end
 end
