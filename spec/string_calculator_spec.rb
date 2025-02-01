@@ -27,6 +27,6 @@ describe StringCalculator do
   end
 
   it "should raise an error for negative numbers with multiple negative numbers" do
-    expect{ StringCalculator.new.add("//;\n1;2;-3, 6, -4") }.to raise_exception(StandardError, "negative numbers not supported -3, -4")
+    expect{ StringCalculator.new.add("//;\n1;2;-3;6;-4") }.to raise_exception(StandardError, "negative numbers not supported -3, -4")
   end
 end
