@@ -4,11 +4,11 @@ class StringCalculator
 
     delimiter, numbers = extract_delimiters_and_numbers(numbers)
 
-    negative_check = numbers.gsub("\n", delimiter.first).split(Regexp.union(delimiter)).map(&:to_i)
+    number_arr = numbers.gsub("\n", delimiter.first).split(Regexp.union(delimiter)).map(&:to_i)
 
-    raise "negative numbers not allowed #{negative_check.select{|n| n < 0}.join(", ")}" if negative_check.min < 0
+    negative_check!(number_arr)
 
-    negative_check.reject {|n| n > 1000}.sum
+    number_arr.reject {|n| n > 1000}.sum
   end
 
   def extract_delimiters_and_numbers(numbers)
@@ -20,5 +20,9 @@ class StringCalculator
     end
 
     return delimiter, numbers
+  end
+
+  def negative_check!(number_arr)
+    raise "negative numbers not allowed #{number_arr.select{|n| n < 0}.join(", ")}" if number_arr.min < 0
   end
 end
