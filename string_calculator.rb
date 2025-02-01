@@ -8,6 +8,11 @@ class StringCalculator
     else
       delimiter = ","
     end
-      numbers.gsub("\n", delimiter).split(delimiter).map(&:to_i).sum
+      
+    negative_check = numbers.gsub("\n", delimiter).split(delimiter).map(&:to_i)
+
+    raise "negative numbers not supported" if negative_check.min < 0
+
+    negative_check.sum
   end
 end

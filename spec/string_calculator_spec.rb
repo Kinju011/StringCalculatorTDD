@@ -21,4 +21,8 @@ describe StringCalculator do
   it "should support different delimiters" do
     expect(StringCalculator.new.add("//;\n1;2")).to eq(3)
   end
+
+  it "should raise an error for negative numbers" do
+    expect{ StringCalculator.new.add("//;\n1;2;-3") }.to raise_exception(StandardError, "negative numbers not supported")
+  end
 end
