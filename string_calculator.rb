@@ -12,6 +12,6 @@ class StringCalculator
 
     raise "negative numbers not allowed #{negative_check.select{|n| n < 0}.join(", ")}" if negative_check.min < 0
 
-    negative_check.sum
+    negative_check.reject {|n| n > 1000}.sum
   end
 end
