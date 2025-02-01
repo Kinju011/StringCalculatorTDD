@@ -31,4 +31,8 @@ describe StringCalculator do
   it "should raise an error for negative numbers with multiple negative numbers" do
     expect{ string_calaulator.add("//;\n1;2;-3;6;-4") }.to raise_exception(StandardError, "negative numbers not allowed -3, -4")
   end
+
+  it "should ignore the number bigger than 1000" do
+    expect(string_calaulator.add("1,4,2,1001")).to eq(7)
+  end
 end
