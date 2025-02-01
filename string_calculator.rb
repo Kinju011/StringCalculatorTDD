@@ -11,6 +11,8 @@ class StringCalculator
     number_arr.reject {|n| n > 1000}.sum
   end
 
+  private
+  
   def extract_delimiters_and_numbers(numbers)
     if numbers.start_with?("//")
       delimiter = numbers.split("\n").first.tr('[]', '').tr("//", "").split('')
