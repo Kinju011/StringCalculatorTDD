@@ -9,3 +9,4 @@ A simple string calculator implemented using Test-Driven Development (TDD) in Ru
 - Igonre number bigger than 1000
 - Support the delimiter at any length
 - Support multiple delimiters
+- Support multiple delimiters at any length
