@@ -17,4 +17,8 @@ describe StringCalculator do
   it "returns the sum of two numbers separated by a comma or newline" do
     expect(StringCalculator.new.add("1\n2,3")).to eq(6)
   end
+
+  it "should support different delimiters" do
+    expect(StringCalculator.new.add("//;\n1;2")).to eq(3)
+  end
 end
