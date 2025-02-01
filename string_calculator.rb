@@ -3,7 +3,8 @@ class StringCalculator
     return 0 if numbers.empty?
 
     if numbers.start_with?("//")
-      delimiter, numbers = numbers[2], numbers.split("\n", 2).last
+      delimiter = numbers.split("\n").first.tr('[]', '').tr("//", "")
+      numbers = numbers.split("\n", 2).last
     else
       delimiter = ","
     end

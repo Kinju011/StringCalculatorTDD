@@ -35,4 +35,8 @@ describe StringCalculator do
   it "should ignore the number bigger than 1000" do
     expect(string_calaulator.add("1,4,2,1001")).to eq(7)
   end
+
+  it "should support delimiters of any length" do
+    expect(string_calaulator.add("//[***]\n1***2***3")).to eq(6)
+  end
 end
