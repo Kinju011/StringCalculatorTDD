@@ -10,11 +10,7 @@ class StringCalculator
 
     negative_check = numbers.gsub("\n", delimiter).split(delimiter).map(&:to_i)
 
-    if negative_check.min < 0 && negative_check.select{|n| n < 0}.count > 1
-      raise "negative numbers not supported #{negative_check.select{|n| n < 0}.join(", ")}"
-    end
-
-    raise "negative numbers not supported" if negative_check.min < 0
+    raise "negative numbers not allowed #{negative_check.select{|n| n < 0}.join(", ")}" if negative_check.min < 0
 
     negative_check.sum
   end

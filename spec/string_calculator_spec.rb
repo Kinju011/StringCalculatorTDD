@@ -25,10 +25,10 @@ describe StringCalculator do
   end
 
   it "should raise an error for negative numbers" do
-    expect{ string_calaulator.add("//;\n1;2;-3") }.to raise_exception(StandardError, "negative numbers not supported")
+    expect{ string_calaulator.add("//;\n1;2;-3") }.to raise_exception(StandardError, "negative numbers not allowed -3")
   end
 
   it "should raise an error for negative numbers with multiple negative numbers" do
-    expect{ string_calaulator.add("//;\n1;2;-3;6;-4") }.to raise_exception(StandardError, "negative numbers not supported -3, -4")
+    expect{ string_calaulator.add("//;\n1;2;-3;6;-4") }.to raise_exception(StandardError, "negative numbers not allowed -3, -4")
   end
 end
